@@ -1,2 +1,10 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<h1>Jobs</h1>
+<% @job.each do |kazi| %>
+<div class="kazi">
+<h2><%= link_to kazi.title, kazi.url %></h2>
+<p><%= kazi.company%></p>
+</div>
+<% end %>
+<%= link_to "Add a job", new_job_path %>
+
+<p><%= paginate @job %></p>
